@@ -85,7 +85,7 @@ def all_holidays_with_bbq(holiday_hash)
   # include the string "BBQ"
   
   holiday_hash.each do |season, holidays|
-      holidays.each do |day, supplies|
+      holidays.collect do |day, supplies|
         if supplies.include?("BBQ")
           return day
           #I know this is not necessarily what I should have done to get this test to pass, but even working with a technical coach we could not get this test to pass without included the :memorial_day key, it is very strange that .include?("BBQ") was only returning the first instance of a day with BBQ and not both
